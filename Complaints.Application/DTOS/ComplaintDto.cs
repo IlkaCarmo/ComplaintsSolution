@@ -1,21 +1,14 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Complaints.Application.DTOS
 {
-    public class ComplaintDto
+    public class ComplaintDto : ComplaintInputDto
     {
-        [Required]
-        public string CustomerName { get; set; }
+        public List<string> AttachmentUrls { get; set; } = new();
 
-        [Required]
-        [StringLength(11, MinimumLength = 11)]
-        public string CPF { get; set; }
-
-        [Required]
-        [MinLength(10)]
-        public string Description { get; set; }
-
-        public string Channel { get; set; } = "Digital";
     }
 }
